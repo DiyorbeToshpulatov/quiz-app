@@ -1,0 +1,37 @@
+<template>
+  <header>
+    <h4>Question {{ questionStatus }}</h4>
+    <div class="bar">
+      <div class="completion" :style="{ width: barPercentage }"></div>
+    </div>
+  </header>
+</template>
+
+<script setup>
+const { questionStatus, barPercentage } = defineProps([
+  'questionStatus',
+  'barPercentage',
+]);
+</script>
+
+<style scoped>
+header {
+  margin-top: 20px;
+}
+
+header h4 {
+  font-size: 30px;
+}
+
+.bar {
+  width: 100%;
+  height: 8px;
+  border: 3px solid darkblue;
+}
+
+.completion {
+  height: 100%;
+  width: 0%;
+  background-color: darkblue;
+}
+</style>
